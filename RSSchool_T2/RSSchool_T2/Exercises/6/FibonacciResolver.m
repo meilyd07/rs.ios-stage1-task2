@@ -30,7 +30,11 @@
     }
     
     if (resultIndex > 0) {
-        return @[fibonacciArray[resultIndex], fibonacciArray[resultIndex + 1], ([fibonacciArray[resultIndex] unsignedIntegerValue] * [fibonacciArray[resultIndex + 1] unsignedIntegerValue]) == productNumber ? @1 : @0];
+        NSUInteger multiplyProduct = ([fibonacciArray[resultIndex] unsignedIntegerValue] * [fibonacciArray[resultIndex + 1] unsignedIntegerValue]);
+        
+        NSArray *returnArray = @[fibonacciArray[resultIndex], fibonacciArray[resultIndex + 1], (multiplyProduct == productNumber) ? @1 : @0];
+        [fibonacciArray release];
+        return returnArray;
     } else {
         return @[];
     }
