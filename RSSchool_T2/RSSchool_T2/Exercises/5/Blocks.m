@@ -1,7 +1,7 @@
 #import "Blocks.h"
 
 @interface Blocks()
-@property (nonatomic, assign) NSArray * arrayOfData;
+@property (nonatomic, copy) NSArray * arrayOfData;
 @end
 
 @implementation Blocks
